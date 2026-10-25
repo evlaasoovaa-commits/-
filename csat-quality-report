@@ -33,18 +33,18 @@ else:
     print(f"Всего оценок: {len(numbers)}")
     print(f"Средняя оценка: {average:.2f}")
 
-    if len(wow_csat) > 0:
-        average_csat = len(wow_csat) / len(numbers) * 100
+    if len(positive_scores) > 0:
+        average_csat = len(positive_scores) / len(numbers) * 100
 
-        print(f"Количество положительных оценок (4, 5): {len(wow_csat)}")
+        print(f"Количество положительных оценок (4, 5): {len(positive_scores)}")
         print(f"Доля положительных оценок: {average_csat:.2f}%")
     else:
         print("Нет положительных оценок (4, 5)")
 
-    if len(min_csat) > 0:
-        average_min_csat = len(min_csat) / len(numbers) * 100
+    if len(low_scores) > 0:
+        average_min_csat = len(low_scores) / len(numbers) * 100
 
-        print(f"Количество плохих оценок (1, 2): {len(min_csat)}")
+        print(f"Количество плохих оценок (1, 2): {len(low_scores)}")
         print(f"Доля плохих оценок (1, 2): {average_min_csat:.2f}%")
     else:
         print("Нет плохих оценок (1, 2)")
