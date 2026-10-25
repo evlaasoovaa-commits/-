@@ -1,0 +1,50 @@
+def get_scores_above(numbers, threshold):
+    scores = []
+
+    for number in numbers:
+        if number > threshold:
+            scores.append(number)
+
+    return scores
+
+
+def get_scores_below(numbers, threshold):
+    scores = []
+
+    for number in numbers:
+        if number < threshold:
+            scores.append(number)
+
+    return scores
+
+
+numbers = [5, 4, 3, 5, 2, 4, 5, 3, 4, 1, 5, 4]
+
+positive_scores = get_scores_above(numbers, 3)
+low_scores = get_scores_below(numbers, 3)
+print("Отчёт по качеству поддержки:")
+
+if len(numbers) == 0:
+    print("Нет оценок для формирования отчёта")
+
+else:
+    average = sum(numbers) / len(numbers)
+
+    print(f"Всего оценок: {len(numbers)}")
+    print(f"Средняя оценка: {average:.2f}")
+
+    if len(wow_csat) > 0:
+        average_csat = len(wow_csat) / len(numbers) * 100
+
+        print(f"Количество положительных оценок (4, 5): {len(wow_csat)}")
+        print(f"Доля положительных оценок: {average_csat:.2f}%")
+    else:
+        print("Нет положительных оценок (4, 5)")
+
+    if len(min_csat) > 0:
+        average_min_csat = len(min_csat) / len(numbers) * 100
+
+        print(f"Количество плохих оценок (1, 2): {len(min_csat)}")
+        print(f"Доля плохих оценок (1, 2): {average_min_csat:.2f}%")
+    else:
+        print("Нет плохих оценок (1, 2)")
